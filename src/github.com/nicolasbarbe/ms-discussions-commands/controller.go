@@ -4,7 +4,6 @@ import (
         "github.com/julienschmidt/httprouter"
         "github.com/unrolled/render"
         "gopkg.in/mgo.v2"
-        "gopkg.in/mgo.v2/bson"
         "github.com/nicolasbarbe/kafka"
         "encoding/json" 
         "net/http"
@@ -19,7 +18,7 @@ import (
 
 // Discussion representats a started discussion
 type Discussion struct {
-  Id            bson.ObjectId      `json:"id"            bson:"_id,omitempty"`
+  Id            string             `json:"id"            bson:"_id"`
   Title         string             `json:"title"         bson:"title"`
   Description   string             `json:"description"   bson:"description"`
   Initiator     string             `json:"initiator"     bson:"initiator"`
